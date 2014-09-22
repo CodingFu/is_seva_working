@@ -63,10 +63,12 @@
           $('.working').show();
           $('.idle').hide();
           $('.working .subject').text(data.description);
+          $('title').text('[+] SEVA WORKS');
         } else {
           $('.working').hide();
           $('.idle').show();
           $('.idle .subject').text("last seen " + data.last_seen_humanized);
+          $('title').text('seva smokes');
         }
       });
     }
