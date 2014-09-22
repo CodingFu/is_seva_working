@@ -1,0 +1,19 @@
+{
+  "name": "is_seva_working",
+  "version": "1.0.0",
+  "description": "Tiny Toggl API integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/CodingFu/is_seva_working"
+  },
+  "author": "Seva Rybakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingFu/is_seva_working/issues"
+  },
+  "homepage": "https://github.com/CodingFu/is_seva_working"
+}
