@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/CodingFu/is_seva_working/issues"
   },
-  "homepage": "https://github.com/CodingFu/is_seva_working"
+  "homepage": "https://github.com/CodingFu/is_seva_working",
+  "dependencies": {
+    "hapi": "^6.8.1",
+    "moment": "^2.8.3",
+    "request": "^2.44.0"
+  }
 }

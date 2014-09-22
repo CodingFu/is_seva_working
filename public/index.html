@@ -1,0 +1,74 @@
+<!html>
+<head>
+  <title>Is Seva Working?</title>
+  <style type="text/css">
+    body {
+      font-size: 64px;
+      font-family: "Helvetica", Arial, sans-serif;
+      text-align: center;
+      font-weight: 100;
+    }
+
+    html, body {
+      height: 100%;
+      min-height: 100%;
+    }
+
+    .container {
+      height: 140px;
+      width: 100%;
+      position: absolute;
+      bottom: 50%;
+    }
+
+    .subject {
+      font-size: 48px;
+      font-weight: normal;
+    }
+
+    .working {
+      color: #0074D9;
+      opacity: 0.9;
+    }
+
+    .idle {
+      color: #AAAAAA;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="working" style="display: none;">
+      Seva is working on:
+      <div class="subject">Nothing</div>
+    </div>
+    <div class="idle">
+      Seva is idle:
+      <div class="subject">last seen few seconds ago</div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+      sync();
+      setInterval(sync, 60*1000);
+    });
+
+    function sync() {
+      $.getJSON('/status.json', function(data) {
+        console.log(data);
+        if (data.is_working) {
+          $('.working').show();
+          $('.idle').hide();
+          $('.working .subject').text(data.description);
+        } else {
+          $('.working').hide();
+          $('.idle').show();
+          $('.idle .subject').text("last seen " + data.last_seen_humanized);
+        }
+      });
+    }
+  </script>
+</body>
